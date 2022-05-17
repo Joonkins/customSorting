@@ -129,9 +129,68 @@ function validAnagrams(s, t) {
   // return s.split('').sort().join('') === t.split('').sort().join("") //solved in one line
 }
 
+const arr1 = [11, 1, 101, 10, 100];
+const arr2 = [1, 45, 164, 6, 31, 90, 671];
+
 function reverseBaseSort(arr) {
   // Your code here
+
+  //1. get base 10 value first of each element in arr, then, math floor it for whole number
+
+  return arr.sort((a,b) => {
+    
+    let arr1 = Math.floor(Math.log10(a))
+    let arr2 = Math.floor(Math.log10(b))
+
+    if(arr1 === arr2){return a - b}
+    // if(arr1 > arr2){
+
+    //   return -1
+    else{
+
+      return b-a
+    }
+  })
 }
+  //2. create 2 variables that holds the integer
+    //a. one uses the log 10
+    //b. one uses the result of floor
+
+
+  //3. if base 10
+
+
+
+  //4. base a = base b, sort it ascendingly
+  //4b.base b - base a, else sort it descendly
+
+
+
+
+ 
+  // let base100 = num => {num >= 100} // 
+  // // console.log(num);
+
+
+  // let base10 = num => ((num >= 10) && (num < 100)) 
+  // let base1 = num => ((num >= 1) && (num < 10))
+  // let sorted = arr.sort((a, b) => { 
+
+  //   if(base100(a)){return 1}
+
+  //   if ((base10(a)) && !(base1(b))) {
+  //     return 1
+  //   }else if((!base10(a)) && (base1(b))) {
+  //     return -1}
+
+  // })
+
+
+
+
+console.log(reverseBaseSort(arr1))
+console.log(reverseBaseSort(arr2))
+
 
 function frequencySort(arr) {
   // Your code here
