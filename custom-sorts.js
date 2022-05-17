@@ -43,7 +43,7 @@ function ageSort(users) {
 
   // const left = users.slice(0, midpoint)
 
-  
+
 
   // const right = users.slice(midpoint)
   // const leftSorted = ageSort(left)
@@ -58,7 +58,7 @@ function ageSort(users) {
 
 
 
-  
+
 
 
 
@@ -102,14 +102,31 @@ function ageSort(users) {
 
 // }
 
-console.log(ageSort(users))
+//console.log(ageSort(users))
 
 function oddEvenSort(arr) {
   // Your code here
+
+  let even = num => num % 2 === 0 // mini function to determine even
+  let sorted = arr.sort((a, b) => { // create new sorted array
+    if (even(a) && !even(b)) return 1 // if a is even and b is odd, put to back
+    if (!even(a) && even(b)) return -1 // if a is odd and b is even, push to front
+    return a - b // sort in ascending order
+  })
+  return sorted
 }
+
+
+arr = [5, 4, 7, 2, 9, 8, 1, 6, 3]
+console.log(oddEvenSort(arr))
 
 function validAnagrams(s, t) {
   // Your code here
+  let word1 = s.split('').sort().join('')
+  let word2 = t.split('').sort().join('')
+  if (word1 === word2) return true
+  else return false;
+  // return s.split('').sort().join('') === t.split('').sort().join("") //solved in one line
 }
 
 function reverseBaseSort(arr) {
